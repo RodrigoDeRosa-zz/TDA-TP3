@@ -1,0 +1,87 @@
+\documentclass[a4paper, 10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{caratula}
+
+\newcommand{\Z}{\mathbb{Z}}
+\def\code#1{\texttt{#1}}
+\newcommand\tab[1][0.5cm]{\hspace*{#1}}
+
+\geometry{a4paper, margin=0.7in}
+
+\begin{document}
+    %Caratula
+    \pagenumbering{gobble}
+    \newpage
+
+    \begin{center}
+        \includegraphics[width=5cm, height=5cm]{images/logo}
+    \end{center}
+
+    \materia{Teoría de Algoritmos I}
+    \submateria{Primer Cuatrimestre 2017}
+    \titulo{Trabajo Práctico 3}
+
+    \integrante{Rodrigo De Rosa}{97799}{rodrigoderosa@outlook.com}
+    \integrante{Marcos Schapira}{---}{marcosschapira@gmail.com}
+    \integrante{Facundo Guerrero}{---}{facundoiguerrero@gmail.com}
+    \maketitle
+    %Fin caratula
+    %Table of contents
+    \newpage
+    \pagenumbering{roman}
+    \tableofcontents
+    %Fin table of contents
+    %Informe
+    \newpage
+    \pagenumbering{arabic}
+
+    \section{Programación Dinámica}
+        \tab En esta sección se analiza una solución al problema de la predcción de acciones a través
+        de la programación dinámica.
+        \subsection{Algoritmo}
+            \tab El algoritmo utilizado para la solución de este problema fue %nombre o algo asi
+            \subsubsection{Funcionamiento}
+                \tab Este algoritmo %Que mierda hace...
+            \subsubsection{Ecuación de recurrencia}
+                \tab La ecuación de recurrencia del algoritmo utilizado es la siguiente: \\
+                \tab\tab\tab $ R(n, m) = ... $ %%Alguna cosa
+    \newpage
+
+    \section{Algoritmos Randomizados}
+        \tab En esta sección se analiza una solución al problema de hallar el corte global
+        mínimo en un grafo no dirigido a través de un algoritmo randomizado.
+        \subsection{Algoritmo}
+            \tab Para resolver este problema se utilizó el algoritmo de Karger descripto en
+            la bibliografía proporcionada por la cátedra.
+            \subsubsection{Funcionamiento}
+                \tab Este algoritmo %....
+            \subsubsection{Categoría de randomización}
+                \tab Pertenece a la categoría $X$ porque %....
+    \newpage
+
+    \section{Algoritmos Aproximados}
+        \tab En esta sección se analiza una solución al problema de la suma de subconjuntos
+        a través de un algoritmo aproximado.
+        \subsection{Algoritmo}
+            \tab Para resolver este problema se utilizó la estrategia polinómica descripta en
+            la bibliografía proporcionada por la cátedra.
+            \subsubsection{Funcionamiento}
+                \tab Este algoritmo %....
+    \newpage
+
+    \section{Ejecución de programas}
+    \tab Para correr cada algoritmo, se debe ejecutar el archivo principal de cada uno.
+    Esto se hace de la siguiente forma: \\
+    \tab\tab En la carpeta \code{Programación Dinámica} abrir la consola y ejecutar \code{python main.py} \\
+    \tab\tab En la carpeta \code{Algoritmos Randomizados} abrir la consola y ejecutra \code{python main.py} \\
+    \tab\tab En la carpeta \code{Algoritmos Aproximados} abrir la consola y ejecutra \code{python main.py} \\
+
+    %Fin informe
+\end{document}
