@@ -23,15 +23,18 @@ class SolucionDinamica():
         diaVenta = 0
         diaCompraAux = 0
 
-        for x in xrange(1, self.tam):
+        for x in xrange(1, self.tam): #Para todos los dias de la prediccion
 
             #Este chequeo lo hago antes porque si el valor actual es menor al valor de compra, da negativo
+            #Se verifica si hay un dia en que se puede comprar mas barato
             if(self.prediccion[diaCompraAux] > self.prediccion[x]):
                 diaCompraAux = x
 
-            #Me quedo con la ganancia del dia que menor sale comprar con el dia actual
+            #Me quedo con la ganancia del dia que menos sale comprar con el dia actual
+            #La ganancia temporal es el precio del dia que compre menos el precio del dia actual
             gananciaTemporal = self.prediccion[x] - self.prediccion[diaCompraAux]
-            print(gananciaTemporal)
+
+            #Si los valores actuales son mejores que los anteriores, se reemplazan
             if(gananciaMax < gananciaTemporal):
                 gananciaMax = gananciaTemporal
                 diaCompra = diaCompraAux
@@ -41,6 +44,6 @@ class SolucionDinamica():
 
 
 def main():
-    c = SolucionDinamica([2,9,1,70])
+    c = SolucionDinamica([1, 9, 1, 70])
     print(c.getBestDays())
 main()
