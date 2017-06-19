@@ -1,6 +1,4 @@
-
-
-class ProgDin():
+class SolucionDinamica():
 
     def __init__(self, listaPrediccion):
         self.prediccion = listaPrediccion
@@ -43,6 +41,6 @@ class ProgDin():
 
 
 def main():
-    c = ProgDin([2,9,1,70])
+    c = SolucionDinamica([2,9,1,70])
     print(c.getBestDays())
 main()
