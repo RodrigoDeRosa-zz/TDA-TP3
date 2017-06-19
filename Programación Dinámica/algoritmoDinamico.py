@@ -40,10 +40,4 @@ class SolucionDinamica():
                 diaCompra = diaCompraAux
                 diaVenta = x
 
-        return gananciaMax
-
-
-def main():
-    c = SolucionDinamica([1, 9, 1, 70])
-    print(c.getBestDays())
-main()
+        return (diaCompra, diaVenta, gananciaMax)

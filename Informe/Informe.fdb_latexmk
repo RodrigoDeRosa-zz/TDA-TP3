@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1497900027 "Informe.tex" "/home/rodrigo/Escritorio/FIUBA/Teoria de Algoritmos/TDA-TP3/Informe/Informe.pdf" "Informe" 1497900028
+["pdflatex"] 1497900984 "Informe.tex" "/home/rodrigo/Escritorio/FIUBA/Teoria de Algoritmos/TDA-TP3/Informe/Informe.pdf" "Informe" 1497900986
   "/etc/texmf/web2c/texmf.cnf" 1492473652 1101 af7716885e081ab43982cab7b4672c1a ""
-  "/home/rodrigo/Escritorio/FIUBA/Teoria de Algoritmos/TDA-TP3/Informe/Informe.aux" 1497900028 1319 a11be44885b3aa263fdee7e67420cc0f ""
+  "/home/rodrigo/Escritorio/FIUBA/Teoria de Algoritmos/TDA-TP3/Informe/Informe.aux" 1497900985 1319 a11be44885b3aa263fdee7e67420cc0f ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -71,15 +71,15 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1458942643 31351 b32c45dce4a01cb7b53ed90c546614ca ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1492473810 1863403 f3ff9a4253bcb5fb9a9baaf0c572cb01 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1492474046 3853696 882807c3a80bbaec926f3715766ec0f6 ""
-  "Informe.aux" 1497900028 1319 a11be44885b3aa263fdee7e67420cc0f ""
-  "Informe.tex" 1497900026 4641 39e6231f51f683752fd6fde24f9b3bbe ""
-  "Informe.toc" 1497900028 882 3d5e8f0443d64829a2714ea302623ec9 ""
+  "Informe.aux" 1497900985 1319 a11be44885b3aa263fdee7e67420cc0f ""
+  "Informe.tex" 1497900983 4664 ef7efd34751dca07362ac27a05abac1a ""
+  "Informe.toc" 1497900985 882 3d5e8f0443d64829a2714ea302623ec9 ""
   "caratula.sty" 1497628056 3400 f60ee7958b0f83875671b59b850f43ce ""
   "images/logo.png" 1497627919 101745 79dbefebbed8b2cb6c363eb7ea2a9415 ""
   (generated)
-  "Informe.log"
   "Informe.toc"
-  "Informe.pdf"
-  "/home/rodrigo/Escritorio/FIUBA/Teoria de Algoritmos/TDA-TP3/Informe/Informe.log"
+  "Informe.log"
   "/home/rodrigo/Escritorio/FIUBA/Teoria de Algoritmos/TDA-TP3/Informe/Informe.pdf"
   "Informe.aux"
+  "Informe.pdf"
+  "/home/rodrigo/Escritorio/FIUBA/Teoria de Algoritmos/TDA-TP3/Informe/Informe.log"
