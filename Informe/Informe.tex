@@ -29,7 +29,7 @@
     \titulo{Trabajo Práctico 3}
 
     \integrante{Rodrigo De Rosa}{97799}{rodrigoderosa@outlook.com}
-    \integrante{Marcos Schapira}{---}{marcosschapira@gmail.com}
+    \integrante{Marcos Schapira}{---}{schapiramarcos@gmail.com}
     \integrante{Facundo Guerrero}{---}{facundoiguerrero@gmail.com}
     \maketitle
     %Fin caratula
@@ -46,9 +46,24 @@
         \tab En esta sección se analiza una solución al problema de la predcción de acciones a través
         de la programación dinámica.
         \subsection{Algoritmo}
-            \tab El algoritmo utilizado para la solución de este problema fue %nombre o algo asi
             \subsubsection{Funcionamiento}
-                \tab Este algoritmo %Que mierda hace...
+                \tab El algoritmo utilizado para resolver el problema planteado funciona de la siguiente
+                forma:
+                \begin{itemize}
+                    \item Determina un \code{día de compra}, un \code{día de venta}, un \code{día de compra auxiliar},
+                    una \code{ganancia máxima} y una \code{ganancia temporal}.
+                    \item Itera sobre todos los días (valores diferentes de acciones) verificando si
+                    en el día actual es más o menos favorable comprar acciones que en el día en el
+                    que se pretendía hacerlo hasta el momento, determinando el \code{día de compra auxiliar}.
+                    \item A partir del día que determinó, calcula la \code{ganancia temporal} como la que se obtendría
+                    si las acciones fueran vendidas el día actual y verifica si es mayor a la \code{ganancia máxima}
+                    hasta el momento.
+                    \item En tal caso, determina el \code{día de venta} como el actual, el \code{día de compra}
+                    como el que previamente era el \code{día de compra auxiliar} y la \code{ganancia máxima} como
+                    la que era la \code{ganancia temporal}.
+                    \item Al finalizar la iteración, queda determinado el \code{día de compra} más conveniente, el
+                    \code{día de venta} más conveniente y la \code{ganancia máxima} obtenible.
+                \end{itemize}
             \subsubsection{Ecuación de recurrencia}
                 \tab La ecuación de recurrencia del algoritmo utilizado es la siguiente: \\
                 \tab\tab\tab $ R(n, m) = ... $ %%Alguna cosa
