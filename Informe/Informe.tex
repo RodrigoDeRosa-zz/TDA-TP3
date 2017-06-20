@@ -16,90 +16,96 @@
 \geometry{a4paper, margin=0.7in}
 
 \begin{document}
-    %Caratula
-    \pagenumbering{gobble}
-    \newpage
+%Caratula
+\pagenumbering{gobble}
+\newpage
 
-    \begin{center}
-        \includegraphics[width=5cm, height=5cm]{images/logo}
-    \end{center}
+\begin{center}
+ \includegraphics[width=5cm, height=5cm]{images/logo}
+\end{center}
 
-    \materia{Teoría de Algoritmos I}
-    \submateria{Primer Cuatrimestre 2017}
-    \titulo{Trabajo Práctico 3}
+\materia{Teoría de Algoritmos I}
+\submateria{Primer Cuatrimestre 2017}
+\titulo{Trabajo Práctico 3}
 
-    \integrante{Rodrigo De Rosa}{97799}{rodrigoderosa@outlook.com}
-    \integrante{Marcos Schapira}{---}{schapiramarcos@gmail.com}
-    \integrante{Facundo Guerrero}{97981}{facundoiguerrero@gmail.com}
-    \maketitle
-    %Fin caratula
-    %Table of contents
-    \newpage
-    \pagenumbering{roman}
-    \tableofcontents
-    %Fin table of contents
-    %Informe
-    \newpage
-    \pagenumbering{arabic}
+\integrante{Rodrigo De Rosa}{97799}{rodrigoderosa@outlook.com}
+\integrante{Marcos Schapira}{---}{schapiramarcos@gmail.com}
+\integrante{Facundo Guerrero}{97981}{facundoiguerrero@gmail.com}
+\maketitle
+%Fin caratula
+%Table of contents
+\newpage
+\pagenumbering{roman}
+\tableofcontents
+%Fin table of contents
+%Informe
+\newpage
+\pagenumbering{arabic}
 
-    \section{Programación Dinámica}
-        \tab En esta sección se analiza una solución al problema de la predcción de acciones a través
-        de la programación dinámica.
-        \subsection{Algoritmo}
-            \tab El algoritmo utilizado para resolver el problema planteado esta basado en el algoritmo de kadane.
-            Este busca la maxima suma de elementos contiguos dentro de un arreglo.
-            \subsubsection{Funcionamiento}
-                \tab Este algoritmo funciona de la siguiente forma:
-                \begin{itemize}
-                    \item Inicializa un \code{día de compra}, un \code{día de venta}, un \code{día de compra auxiliar}, como el
-                    primer dia,una \code{ganancia máxima} y una \code{ganancia temporal}.
-                    \item Itera sobre todos los días (valores diferentes de acciones) verificando si
-                    en el día actual( dia i ) es más o menos favorable comprar acciones que en el día en el
-                    que se pretendía hacerlo hasta el momento( dia k ), determinando el \code{día de compra auxiliar}.
-                    Esto asegura la obtencion de la mayor ganancia hasta el dia i-1. Si el dia i < dia k, se va a actualizar
-                    la ganancia maxima en el caso que (dia r - dia i)> ganancia maxima, para todo r = i+1, ... , n.
-                    \item A partir del día que determinó, calcula la \code{ganancia temporal} como la que se obtendría
-                    si las acciones fueran vendidas el día actual y verifica si es mayor a la \code{ganancia máxima}
-                    hasta el momento.
-                    \item En tal caso, determina el \code{día de venta} como el actual, el \code{día de compra}
-                    como el que previamente era el \code{día de compra auxiliar} y la \code{ganancia máxima} como
-                    la que era la \code{ganancia temporal}.
-                    \item Al finalizar la iteración, queda determinado el \code{día de compra} más conveniente, el
-                    \code{día de venta} más conveniente y la \code{ganancia máxima} obtenible.
-                \end{itemize}
-            \subsubsection{Ecuación de recurrencia}
-                \tab La ecuación de recurrencia del algoritmo utilizado es la siguiente: \\
-                \tab\tab\tab $ R(n, m) = ... $ %%Alguna cosa
-    \newpage
+\section{Programación Dinámica}
+\tab En esta sección se analiza una solución al problema de la predcción de acciones a través
+de la programación dinámica.
+\subsection{Algoritmo}
+\tab El algoritmo utilizado para resolver el problema planteado esta basado en el algoritmo de kadane.
+Este busca la maxima suma de elementos contiguos dentro de un arreglo.
+\subsubsection{Funcionamiento}
+\tab Este algoritmo funciona de la siguiente forma:
+\begin{itemize}
+ \item Inicializa un \code{día de compra}, un \code{día de venta}, un \code{día de compra auxiliar}, todos
+       como el primer dia. Tambien se inicializa una \code{ganancia máxima} y una \code{ganancia temporal},
+       ambas como 0 ya que, hasta el momento, el dia de compra es igual al dia de venta.
 
-    \section{Algoritmos Randomizados}
-        \tab En esta sección se analiza una solución al problema de hallar el corte global
-        mínimo en un grafo no dirigido a través de un algoritmo randomizado.
-        \subsection{Algoritmo}
-            \tab Para resolver este problema se utilizó el algoritmo de Karger descripto en
-            la bibliografía proporcionada por la cátedra.
-            \subsubsection{Funcionamiento}
-                \tab Este algoritmo %....
-            \subsubsection{Categoría de randomización}
-                \tab Pertenece a la categoría $X$ porque %....
-    \newpage
+ \item Luego itera sobre todos los días (valores diferentes de acciones) verificando si
+       en el día actual( dia i ) es más o menos favorable comprar acciones que en el día en el
+       que se pretendía hacerlo hasta el momento( dia k ), determinando el \code{día de compra auxiliar}.
+       Esto asegura la obtencion de la mayor ganancia hasta el dia i-1.
 
-    \section{Algoritmos Aproximados}
-        \tab En esta sección se analiza una solución al problema de la suma de subconjuntos
-        a través de un algoritmo aproximado.
-        \subsection{Algoritmo}
-            \tab Para resolver este problema se utilizó la estrategia polinómica descripta en
-            la bibliografía proporcionada por la cátedra.
-            \subsubsection{Funcionamiento}
-                \tab Este algoritmo %....
-    \newpage
+ \item A partir del día que determinó, calcula la \code{ganancia temporal} como la ganancia que se obtendría
+       si las acciones fueran compradas en el \code{día de compra} y vendidas el \code{día actual}.
+       Luego se verifica si la \code{ganancia temporal} es mayor a la \code{ganancia máxima}.
 
-    \section{Ejecución de programas}
-    \tab Para correr cada algoritmo, se debe ejecutar el archivo principal de cada uno.
-    Esto se hace de la siguiente forma: \\
-    \tab\tab En la carpeta \code{Programación Dinámica} abrir la consola y ejecutar \code{python main.py} \\
-    \tab\tab En la carpeta \code{Algoritmos Randomizados} abrir la consola y ejecutra \code{python main.py} \\
-    \tab\tab En la carpeta \code{Algoritmos Aproximados} abrir la consola y ejecutra \code{python main.py} \\
+ \item En tal caso, determina el \code{día de venta} como el actual, el \code{día de compra}
+       como el que previamente era el \code{día de compra auxiliar} y la \code{ganancia máxima} como
+       la que era la \code{ganancia temporal}.
 
-    %Fin informe
+ \item Al finalizar la iteración, queda determinado el \code{día de compra} más conveniente, el
+       \code{día de venta} más conveniente y la \code{ganancia máxima} obtenible.
+
+ \item Dado que el algoritmo propuesto recorre una sola vez el arreglo, funciona en $O(n)$.
+\end{itemize}
+\subsubsection{Ecuación de recurrencia}
+\tab La ecuación de recurrencia del algoritmo utilizado es la siguiente: \\
+\tab\tab\tab $ R(n, m) = ... $ %%Alguna cosa
+\newpage
+
+\section{Algoritmos Randomizados}
+\tab En esta sección se analiza una solución al problema de hallar el corte global
+mínimo en un grafo no dirigido a través de un algoritmo randomizado.
+\subsection{Algoritmo}
+\tab Para resolver este problema se utilizó el algoritmo de Karger descripto en
+la bibliografía proporcionada por la cátedra.
+\subsubsection{Funcionamiento}
+\tab Este algoritmo %....
+\subsubsection{Categoría de randomización}
+\tab Pertenece a la categoría $X$ porque %....
+\newpage
+
+\section{Algoritmos Aproximados}
+\tab En esta sección se analiza una solución al problema de la suma de subconjuntos
+a través de un algoritmo aproximado.
+\subsection{Algoritmo}
+\tab Para resolver este problema se utilizó la estrategia polinómica descripta en
+la bibliografía proporcionada por la cátedra.
+\subsubsection{Funcionamiento}
+\tab Este algoritmo %....
+\newpage
+
+\section{Ejecución de programas}
+\tab Para correr cada algoritmo, se debe ejecutar el archivo principal de cada uno.
+Esto se hace de la siguiente forma: \\
+\tab\tab En la carpeta \code{Programación Dinámica} abrir la consola y ejecutar \code{python main.py} \\
+\tab\tab En la carpeta \code{Algoritmos Randomizados} abrir la consola y ejecutra \code{python main.py} \\
+\tab\tab En la carpeta \code{Algoritmos Aproximados} abrir la consola y ejecutra \code{python main.py} \\
+
+%Fin informe
 \end{document}
