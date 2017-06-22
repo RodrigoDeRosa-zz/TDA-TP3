@@ -67,19 +67,25 @@
             \subsubsection{Ecuación de recurrencia}
                 Para la ecuación de recurrencia se plantea lo siguiente: \\
                 \begin{itemize}
-                  \item Se tiene una variable \code{Ci = Dìa en el que se compran las acciones hasta el paso i, con i = 1, ..., n}.
-                  \item Ademas, se tiene otra variable \code{Vk = Dìa en el que se venden las acciones hasta el paso k, con k = i, ..., n}.
-                  \item Observar que k esta relacionada con i, ya que el dia de venta debe ser mayor o igual al dia de compra. En el caso de ser igual, la ganancia seria 0.
-                  \item Se puede obtener la \code{Ganancia Temporal} del paso \code{i,k}, como \code{GT i,k = Vk - Ci}.
-                  \item Entonces, la \code{Ganancia Màxima} es la maxima \code{GT i,k} obtenida al final del algoritmo.
-                  \item Se puede definir la \code{ganancia maxima} para el paso \code{i,k} como:
-                  \code{GM i,k} =
-                  \begin{cases}
-                    Vk - Ci  & \mbox{si } GT i,k > GM i,k \\
-                    GT i,k-1 & \mbox{si } GT i,k <= GM i,k
-                  \end{cases}
-                \end{itemize}
+                  \item Se tiene una variable \code{C_{i}} \code{= Día en el que se compran las acciones hasta el paso i, con i=1,...,n}.
 
+                  \item Ademas, se tiene otra variable \code{V_{k}} \code{= Día en el que se venden las acciones hasta el paso k, con k=i,...,n}.
+
+                  \item Observar que k esta relacionada con i, ya que el dia de venta debe ser mayor o igual al dia de compra. En el caso de ser igual, la ganancia seria 0.
+
+                  \item Se puede obtener la \code{Ganancia Temporal} del paso \code{i,k}, como \code{GT_{i,k} = V_{k} - C_{i} }.
+
+                  \item Entonces, la \code{Ganancia Máxima} es la máxima \code{ GT_{i,k} }.
+
+                  \item Se puede definir la \code{Ganancia Máxima} para el paso \code{i,k} como:
+                  \begin{center}
+                    \tab\tab\tab\tab\tab\tab\tab\tab\code{GM_{i,k} } =
+                    \begin{cases}
+                      V_{k} - C_{i}  & \mbox{si } GT_{i,k} > GM_{i,k} \\
+                      GT_{i,k-1} & \mbox{si } GT_{i,k} <= GM_{i,k}
+                    \end{cases}
+                  \end{center}
+                \end{itemize}
     \newpage
 
     \section{Algoritmos Randomizados}
@@ -114,20 +120,20 @@
 
     \section{Algoritmos Aproximados}
         \tab En esta sección se analiza una solución al problema de la suma de subconjuntos
-        a través de un algoritmo aproximado. Para resolver este problema se utilizó la 
+        a través de un algoritmo aproximado. Para resolver este problema se utilizó la
         estrategia polinómica descripta en la bibliografía proporcionada por la cátedra.
             \subsubsection{Funcionamiento}
-                \tab El problema de la suma de subconjuntos (subset sum) consiste en, a partir de un conjunto S de enteros 
-                positivos y un target t también entero positivo, saber si existe algún subconjunto de S cuya suma sea 
+                \tab El problema de la suma de subconjuntos (subset sum) consiste en, a partir de un conjunto S de enteros
+                positivos y un target t también entero positivo, saber si existe algún subconjunto de S cuya suma sea
                 exactamente t. Este problema es NP-Completo.
-                \tab A partir de él se puede derivar a una aproximación completamente polinómica mediante el “recorte” o 
-                “trimming” de cada subconjunto que se va generando en el algoritmo exacto. Este mecanismo se sostiene de 
+                \tab A partir de él se puede derivar a una aproximación completamente polinómica mediante el “recorte” o
+                “trimming” de cada subconjunto que se va generando en el algoritmo exacto. Este mecanismo se sostiene de
                 la idea de que si dos números pertenecen a S y tienen valores similares entonces no tiene mucho sentido
-                mantener a ambos explícitamente (en referencia al algoritmo aproximado). Así es como mediante un parámetro 
-                de aproximación sigma tal que: 
+                mantener a ambos explícitamente (en referencia al algoritmo aproximado). Así es como mediante un parámetro
+                de aproximación sigma tal que:
                                                             0 < sigma < 1
                 \tab Se eliminan tantos elementos de S como sea posible ya que por cada elemento eliminado va a haber otro
-                que pertenezca a S y lo represente. Así es como el algoritmo logra dado un conjunto S y un parámetro t 
+                que pertenezca a S y lo represente. Así es como el algoritmo logra dado un conjunto S y un parámetro t
                 devolver la mayor suma de elementos menor o igual a t. A la vez el algoritmo obtiene por parámetro a sigma,
                 con lo cual la suma que devuelve está a un factor de (1 + sigma) del valor real.
             \subsubsection{Análisis del Algoritmo}
@@ -151,7 +157,7 @@
                         173 & 0,62 & 172 & \%99,4 \\
                     \end{tabular}
                 \end{table}
- 
+
                 \tab Como se puede apreciar, los porcentajes son extremadamente altos y caen dentro del factor esperado.
     \newpage
 

@@ -8,6 +8,6 @@
 \contentsline {subsubsection}{\numberline {2.1.1}Funcionamiento}{2}
 \contentsline {subsubsection}{\numberline {2.1.2}Categor\IeC {\'\i }a de randomizaci\IeC {\'o}n}{2}
 \contentsline {section}{\numberline {3}Algoritmos Aproximados}{3}
-\contentsline {subsection}{\numberline {3.1}Algoritmo}{3}
-\contentsline {subsubsection}{\numberline {3.1.1}Funcionamiento}{3}
+\contentsline {subsubsection}{\numberline {3.0.1}Funcionamiento}{3}
+\contentsline {subsubsection}{\numberline {3.0.2}An\IeC {\'a}lisis del Algoritmo}{3}
 \contentsline {section}{\numberline {4}Ejecuci\IeC {\'o}n de programas}{4}
