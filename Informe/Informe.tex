@@ -77,7 +77,7 @@
             \subsubsection{Ecuación de recurrencia}
                 Para la ecuación de recurrencia se plantea lo siguiente: \\
                 \begin{itemize}
-                  \item Se tiene una variable \code{C_{i}} \code{= Día en el que se compran las acciones hasta el paso i, con i=1,...,n}.
+                  \item Se tiene una variable \code{C_{i}} \code{= Día en el que se compran las acciones hasta el paso i,con i=1,...,n}.
 
                   \item Ademas, se tiene otra variable \code{V_{k}} \code{= Día en el que se venden las acciones hasta el paso k, con k=i,...,n}.
 
@@ -135,17 +135,17 @@
             \subsubsection{Funcionamiento}
                 \tab El problema de la suma de subconjuntos (subset sum) consiste en, a partir de un conjunto S de enteros
                 positivos y un target t también entero positivo, saber si existe algún subconjunto de S cuya suma sea
-                exactamente t. Este problema es NP-Completo.
+                exactamente t. Este problema es NP-Completo.\\
                 \tab A partir de él se puede derivar a una aproximación completamente polinómica mediante el “recorte” o
                 “trimming” de cada subconjunto que se va generando en el algoritmo exacto. Este mecanismo se sostiene de
                 la idea de que si dos números pertenecen a S y tienen valores similares entonces no tiene mucho sentido
                 mantener a ambos explícitamente (en referencia al algoritmo aproximado). Así es como mediante un parámetro
                 de aproximación sigma tal que:
-                                                            0 < sigma < 1
+                                                            $0 < \sigma < 1$ \\
                 \tab Se eliminan tantos elementos de S como sea posible ya que por cada elemento eliminado va a haber otro
                 que pertenezca a S y lo represente. Así es como el algoritmo logra dado un conjunto S y un parámetro t
                 devolver la mayor suma de elementos menor o igual a t. A la vez el algoritmo obtiene por parámetro a sigma,
-                con lo cual la suma que devuelve está a un factor de (1 + sigma) del valor real.
+                con lo cual la suma que devuelve está a un factor de $(1 + \sigma)$ del valor real.\\
             \subsubsection{Análisis del Algoritmo}
                 \tab La tabla a continuación muestra resultados del algoritmo con sigmas variables. A la vez los elementos
                 en cada instancia y el valor de t fueron generados aleatoriamente. Z es el valor devuelto por el algoritmo.
@@ -153,6 +153,8 @@
                 \begin{table}[h!]
                     \centering
                     \caption{Resultados para N = 350}
+
+
                     \begin{tabular}{c|c|c|c}
                         T & Sigma & Zreal & Z real porcentual \\
                         \hline
