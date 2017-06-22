@@ -114,12 +114,45 @@
 
     \section{Algoritmos Aproximados}
         \tab En esta sección se analiza una solución al problema de la suma de subconjuntos
-        a través de un algoritmo aproximado.
-        \subsection{Algoritmo}
-            \tab Para resolver este problema se utilizó la estrategia polinómica descripta en
-            la bibliografía proporcionada por la cátedra.
+        a través de un algoritmo aproximado. Para resolver este problema se utilizó la 
+        estrategia polinómica descripta en la bibliografía proporcionada por la cátedra.
             \subsubsection{Funcionamiento}
-                \tab Este algoritmo %....
+                \tab El problema de la suma de subconjuntos (subset sum) consiste en, a partir de un conjunto S de enteros 
+                positivos y un target t también entero positivo, saber si existe algún subconjunto de S cuya suma sea 
+                exactamente t. Este problema es NP-Completo.
+                \tab A partir de él se puede derivar a una aproximación completamente polinómica mediante el “recorte” o 
+                “trimming” de cada subconjunto que se va generando en el algoritmo exacto. Este mecanismo se sostiene de 
+                la idea de que si dos números pertenecen a S y tienen valores similares entonces no tiene mucho sentido
+                mantener a ambos explícitamente (en referencia al algoritmo aproximado). Así es como mediante un parámetro 
+                de aproximación sigma tal que: 
+                                                            0 < sigma < 1
+                \tab Se eliminan tantos elementos de S como sea posible ya que por cada elemento eliminado va a haber otro
+                que pertenezca a S y lo represente. Así es como el algoritmo logra dado un conjunto S y un parámetro t 
+                devolver la mayor suma de elementos menor o igual a t. A la vez el algoritmo obtiene por parámetro a sigma,
+                con lo cual la suma que devuelve está a un factor de (1 + sigma) del valor real.
+            \subsubsection{Análisis del Algoritmo}
+                \tab La tabla a continuación muestra resultados del algoritmo con sigmas variables. A la vez los elementos
+                en cada instancia y el valor de t fueron generados aleatoriamente. Z es el valor devuelto por el algoritmo.
+
+                \begin{table}[h!]
+                    \centering
+                    \caption{Resultados para N = 350}
+                    \begin{tabular}{c|c|c|c}
+                        T & Sigma & Zreal & Z real porcentual \\
+                        \hline
+                        2213 & 0,94 & 2211 & \%99,9 \\
+                        \hline
+                        2246 & 0,46 & 2245 & \%99,9 \\
+                        \hline
+                        2182 & 0,65 & 2182 & \%100 \\
+                        \hline
+                        2620 & 0,74 & 2618 & \%99,9 \\
+                        \hline
+                        173 & 0,62 & 172 & \%99,4 \\
+                    \end{tabular}
+                \end{table}
+ 
+                \tab Como se puede apreciar, los porcentajes son extremadamente altos y caen dentro del factor esperado.
     \newpage
 
     \section{Ejecución de programas}
