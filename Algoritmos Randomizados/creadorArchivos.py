@@ -50,13 +50,12 @@ class CreadorArchivos(object):
             #Se lo saca de visitados y se lo añade a la arista
             visitados.remove(v);
             arista.append(str(v)) #Vertice actual
-            #Si ya no quedan vertices, se lo une al inicial
+            #Si ya no quedan vertices, se lo une a cualquiera
             if (len(visitados) == 0):
-                dest = 0
+                dest = random.randint(0, n-1)
             else:
                 #Sino, se lo une a un vertice cualquiera del grafo
                 dest = random.choice(visitados)
-                while (dest == i): dest = random.choice(visitados)
                 vertPrev = dest #Para unirlo luego al proximo vertice
                 #Se lo saca de visitados y se lo añade a la arista
                 visitados.remove(dest);
@@ -71,7 +70,7 @@ class CreadorArchivos(object):
 
         #Ahora se completan las 2n aristas con cualquier union entre vertices
         #que no exista todavia
-        for i in xrange(2*n - a):
+        for i in xrange(2*n - a - 2):
             #Vertice de origen
             src = random.randint(0, n-1)
             #Se verifica que no este unido a todos los vertices del grafo

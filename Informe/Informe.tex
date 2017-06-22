@@ -70,15 +70,33 @@
     \newpage
 
     \section{Algoritmos Randomizados}
-        \tab En esta sección se analiza una solución al problema de hallar el corte global
+            En esta sección se analiza una solución al problema de hallar el corte global
         mínimo en un grafo no dirigido a través de un algoritmo randomizado.
         \subsection{Algoritmo}
-            \tab Para resolver este problema se utilizó el algoritmo de Karger descripto en
+                Para resolver este problema se utilizó el algoritmo de Karger descripto en
             la bibliografía proporcionada por la cátedra.
             \subsubsection{Funcionamiento}
-                \tab Este algoritmo %....
+                Sea el grafo $G = (E, V)$, el procedimiento del algoritmo es el siguiente:
+                \begin{itemize}
+                    \item Mientras $|V| > 2$:
+                    \begin{itemize}
+                        \item Se elige $e(u, v) \in E$ aleatoriamente.
+                        \item Se crea un $w \in V$, el cual reemplaza tanto a $u$ como a $v$ en todas
+                        las aristas en las que se encuentran. Es decir, $w$ puede tener más de una arista
+                        que vaya a un mismo vértice $q \in V$.
+                        \item Se elimina $e(u, v)$ de $E$.
+                        \item Si existe alguna $e(v, v) \in E$ (arista de un vértice consigo mismo), se elimina.
+                    \end{itemize}
+                    \item Se devuelven las aristas que unen a esos dos vértices como el corte mínimo.
+                \end{itemize}
             \subsubsection{Categoría de randomización}
-                \tab Pertenece a la categoría $X$ porque %....
+                    Es un algoritmo \emph{Monte-Carlo} porque para algún orden de selección aleatoria
+                de aristas, el corte obtenido \emph{no} es el mínimo. Es decir, es rápido siempre pero no siempre
+                da resultados correctos. \\
+                \tab La probabilidad de que este algoritmo devuelva un corte que sea mínimo es $p \geqslant \binom{n}{2}^{-1}$
+                con $n = |V|$. Un dato adicional es que si el algoritmo se corre $T = \binom{n}{2}\ln{n}$ veces,
+                la probabilidad de no encontrar un corte mínimo es $[1-p]^T \leqslant \dfrac{1}{n}$ en un tiempo
+                $O(Tm) = O(n^2m\log{n})$ con $m = |E|$.
     \newpage
 
     \section{Algoritmos Aproximados}
