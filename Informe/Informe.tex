@@ -29,7 +29,7 @@
     \titulo{Trabajo Práctico 3}
 
     \integrante{Rodrigo De Rosa}{97799}{rodrigoderosa@outlook.com}
-    \integrante{Marcos Schapira}{97934}{schapiramarcos@gmail.com}
+    \integrante{Marcos Schapira}{---}{schapiramarcos@gmail.com}
     \integrante{Facundo Guerrero}{97981}{facundoiguerrero@gmail.com}
     \maketitle
     %Fin caratula
@@ -46,24 +46,34 @@
         En esta sección se analiza una solución al problema de la predcción de acciones a través
         de la programación dinámica.
         \subsection{Algoritmo}
-            El algoritmo utilizado para resolver el problema planteado fue %.....
-            \subsubsection{Funcionamiento}
-                Este algoritmo funciona de la siguiente forma:
-                \begin{itemize}
-                    \item Determina un \code{día de compra}, un \code{día de venta}, un \code{día de compra auxiliar},
-                    una \code{ganancia máxima} y una \code{ganancia temporal}.
-                    \item Itera sobre todos los días (valores diferentes de acciones) verificando si
-                    en el día actual es más o menos favorable comprar acciones que en el día en el
-                    que se pretendía hacerlo hasta el momento, determinando el \code{día de compra auxiliar}.
-                    \item A partir del día que determinó, calcula la \code{ganancia temporal} como la que se obtendría
-                    si las acciones fueran vendidas el día actual y verifica si es mayor a la \code{ganancia máxima}
-                    hasta el momento.
-                    \item En tal caso, determina el \code{día de venta} como el actual, el \code{día de compra}
-                    como el que previamente era el \code{día de compra auxiliar} y la \code{ganancia máxima} como
-                    la que era la \code{ganancia temporal}.
-                    \item Al finalizar la iteración, queda determinado el \code{día de compra} más conveniente, el
-                    \code{día de venta} más conveniente y la \code{ganancia máxima} obtenible.
-                \end{itemize}
+        \tab El algoritmo utilizado para resolver el problema planteado esta basado en el algoritmo de kadane.
+             Este busca la maxima suma de elementos contiguos dentro de un arreglo.
+             \subsubsection{Funcionamiento}
+              \tab Este algoritmo funciona de la siguiente forma:
+              \begin{itemize}
+                \item Inicializa un \code{día de compra}, un \code{día de venta}, un \code{día de compra auxiliar}, todos
+                  como el primer dia. Tambien se inicializa una \code{ganancia máxima} y una \code{ganancia temporal},
+                  ambas como 0 ya que, hasta el momento, el dia de compra es igual al dia de venta.
+
+                \item Luego itera sobre todos los días (valores diferentes de acciones) verificando si
+                  en el día actual( dia i ) es más o menos favorable comprar acciones que en el día en el
+                  que se pretendía hacerlo hasta el momento( dia k ), determinando el \code{día de compra auxiliar}.
+                  Esto asegura la obtencion de la mayor ganancia hasta el dia i-1.
+
+                \item A partir del día que determinó, calcula la \code{ganancia temporal} como la ganancia que se obtendría
+                  si las acciones fueran compradas en el \code{día de compra} y vendidas el \code{día actual}.
+                  Luego se verifica si la \code{ganancia temporal} es mayor a la \code{ganancia máxima}.
+
+                \item En tal caso, determina el \code{día de venta} como el actual, el \code{día de compra}
+                  como el que previamente era el \code{día de compra auxiliar} y la \code{ganancia máxima} como
+                  la que era la \code{ganancia temporal}.
+
+                \item Al finalizar la iteración, queda determinado el \code{día de compra} más conveniente, el
+                  \code{día de venta} más conveniente y la \code{ganancia máxima} obtenible.
+
+                \item Dado que el algoritmo propuesto recorre una sola vez el arreglo, funciona en $O(n)$.
+              \end{itemize}
+
             \subsubsection{Ecuación de recurrencia}
                 Para la ecuación de recurrencia se plantea lo siguiente: \\
                 \begin{itemize}
@@ -125,26 +135,24 @@
             \subsubsection{Funcionamiento}
                 \tab El problema de la suma de subconjuntos (subset sum) consiste en, a partir de un conjunto S de enteros
                 positivos y un target t también entero positivo, saber si existe algún subconjunto de S cuya suma sea
-                exactamente t. Este problema es NP-Completo. \\
+                exactamente t. Este problema es NP-Completo.
                 \tab A partir de él se puede derivar a una aproximación completamente polinómica mediante el “recorte” o
                 “trimming” de cada subconjunto que se va generando en el algoritmo exacto. Este mecanismo se sostiene de
                 la idea de que si dos números pertenecen a S y tienen valores similares entonces no tiene mucho sentido
                 mantener a ambos explícitamente (en referencia al algoritmo aproximado). Así es como mediante un parámetro
-                de aproximación sigma tal que: \\
-                                                            0 \< sigma \< 1 \\
+                de aproximación sigma tal que:
+                                                            0 < sigma < 1
                 \tab Se eliminan tantos elementos de S como sea posible ya que por cada elemento eliminado va a haber otro
                 que pertenezca a S y lo represente. Así es como el algoritmo logra dado un conjunto S y un parámetro t
                 devolver la mayor suma de elementos menor o igual a t. A la vez el algoritmo obtiene por parámetro a sigma,
-                con lo cual la suma que devuelve está a un factor de (1 + sigma) del valor real. \\
+                con lo cual la suma que devuelve está a un factor de (1 + sigma) del valor real.
             \subsubsection{Análisis del Algoritmo}
                 \tab La tabla a continuación muestra resultados del algoritmo con sigmas variables. A la vez los elementos
-                en cada instancia y el valor de t fueron generados aleatoriamente. Z es el valor devuelto por el algoritmo. \\
+                en cada instancia y el valor de t fueron generados aleatoriamente. Z es el valor devuelto por el algoritmo.
 
                 \begin{table}[h!]
                     \centering
                     \caption{Resultados para N = 350}
-                    
-                    
                     \begin{tabular}{c|c|c|c}
                         T & Sigma & Zreal & Z real porcentual \\
                         \hline
