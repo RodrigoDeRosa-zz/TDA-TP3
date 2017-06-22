@@ -4,6 +4,7 @@ from algoritmoDinamico import SolucionDinamica
 
 def main():
     valoresPorDia = [12, 16, 10, 13, 4, 10]
+    valoresPorDia2 = [2, 3, 4, 1, 4, 5]
 
     pd = SolucionDinamica(valoresPorDia)
 
