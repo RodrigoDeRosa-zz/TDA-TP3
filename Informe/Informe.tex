@@ -108,16 +108,21 @@
                   se puede observar que la ganancia del día anterior es 2 y la del día actual es 0, entonces corresponde la ganancia
                   del día anterior.
 
-                  \item Finalmente, se define la ganancia temporal para el paso i como:
-                  \end{enumerate}
+                  \item Entonces, se define la ganancia temporal para el paso i como: \\
 
                   \begin{center}
                     \tab\tab\tab$G_{M i,k}$ =
                     \begin{cases}
-                      $G_{T} [i-1]$ & \mbox{si } $V_{i} \leqslant V_{i-1} $ \\
-                      $V_{i} - D_{CAux}$ & \mbox{si } $V_{i} > V_{i-1}$
+                        $G_{T} [i-1]$ & \mbox{si } $V_{i} \leqslant V_{i-1} $ \\
+                        $V_{i} - D_{CAux}$ & \mbox{si } $V_{i} > V_{i-1}$
                     \end{cases}
                   \end{center}
+
+                  \item Finalmente, vale notar que la ganancia máxima al finalizar la iteración será la ganancia temporal
+                  calculada en el paso $n-esimo$.
+
+                  \item Se ve claramente que el orden de dicho algoritmo es $O(n)$ ya que solamente se recorre el arreglo
+                  una vez para obtener la máxima ganancia.
                 \end{itemize}
     \newpage
 
