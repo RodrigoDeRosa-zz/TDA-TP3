@@ -175,7 +175,11 @@
                 con $n = |V|$. Un dato adicional es que si el algoritmo se corre $T = \binom{n}{2}\ln{n}$ veces,
                 la probabilidad de no encontrar un corte mínimo es $[1-p]^T \leqslant \dfrac{1}{n}$ en un tiempo
                 $O(Tm) = O(n^2m\log{n})$ con $m = |E|$.
-                \tab En cuanto a la optimización de Karger-Stein, la probabilidad es $P(n) = \dfrac{1}{\log{n}}$.
+                \tab En cuanto a la optimización de Karger-Stein, si se corriera el algoritmo descripto una cantidad
+                $N = c \ln^2 n$ de veces, con c lo suficientemente grande, la probabilidad de \emph{no} hallar un corte
+                mínimo sería $P(n) = \dfrac{1}{\log{n}}$.\\
+                \tab Esto nos dice que, dado que el algoritmo base corre en $O(n^2 \log{n})$, repitiendolo tenemos un
+                algoritmo que corre en $O(n^2\log^3 n)$ y tiene alta probabilidad de ser correcto.
     \newpage
 
     \section{Algoritmos Aproximados}

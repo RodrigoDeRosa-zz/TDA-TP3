@@ -18,25 +18,13 @@ def main():
     #Se crea el objeto que resuelve el problema
     karger = Karger(grafo)
     #Se resuelve el problema
-    print "Ejecutando algoritmo de Karger con un grafo de 100 vértices y 200 aristas..."
-    minimumCut = karger.findMinimumCut()
-    print "El corte mínimo obtenido por el algoritmo tiene " + str(len(minimumCut)) + " aristas." \
-    + " Las cuales son:"
-    for edge in minimumCut:
-        print edge
-    print "\n"
-
-    """
-    respuesta = raw_input("Ejecutar el algoritmo muchas veces para disminuir la probabilidad de error?[ENTER = NO]")
-    if not respuesta: return
-
-    print "Ejecutando el algoritmo de Karger [(100C2)ln(100)] veces... \t (22796 veces)"
+    print "Ejecutando el algoritmo de Karger-Stein [(ln(100)^2)] veces en un grafo G = (100, 200)... \t"
     bestMinCut = [0]*100
-    for i in xrange(22795):
+    for i in xrange(22):
         minCut = karger.findMinimumCut()
         if len(minCut) < len(bestMinCut): bestMinCut = minCut
     print "El corte más pequeño obtenido tiene " + str(len(bestMinCut)) + " aristas. Las cuales son:"
     for edge in bestMinCut:
         print edge
-    """
+
 main()
