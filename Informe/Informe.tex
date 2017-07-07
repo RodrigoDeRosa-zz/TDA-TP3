@@ -135,7 +135,7 @@
             \subsubsection{Funcionamiento}
                     Primero presentaremos el algoritmo de Karger, dado que el algoritmo de Karger-Stein
                 es una optimización sobre este mismo: \\
-                \subsubsubsection{Karger}
+                \code{Karger}:\\
                     Sea el grafo $G = (E, V)$, el procedimiento del algoritmo es el siguiente:
                     \begin{itemize}
                         \item Mientras $|V| > t$:
@@ -149,7 +149,7 @@
                         \end{itemize}
                         \item Se devuelve el grafo resultante con $t$ vertices.
                     \end{itemize}
-                \subsubsubsection{Karger-Stein}
+                \code{Karger-Stein}:\\
                         Al algoritmo arriba descripto lo llamaremos \code{MinCut} y procederemos a explicar
                     como funciona la optimización de Karger-Stein sobre el algoritmo original.
                         Esta optimización utiliza un aloritmo recursivo, que llamaremos \code{FastMinCut} y que
