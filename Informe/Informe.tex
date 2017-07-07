@@ -102,30 +102,52 @@
             En esta sección se analiza una solución al problema de hallar el corte global
         mínimo en un grafo no dirigido a través de un algoritmo randomizado.
         \subsection{Algoritmo}
-                Para resolver este problema se utilizó el algoritmo de Karger descripto en
+                Para resolver este problema se utilizó el algoritmo de Karger-Stein descripto en
             la bibliografía proporcionada por la cátedra.
             \subsubsection{Funcionamiento}
-                Sea el grafo $G = (E, V)$, el procedimiento del algoritmo es el siguiente:
-                \begin{itemize}
-                    \item Mientras $|V| > 2$:
+                    Primero presentaremos el algoritmo de Karger, dado que el algoritmo de Karger-Stein
+                es una optimización sobre este mismo: \\
+                \subsubsubsection{Karger}
+                    Sea el grafo $G = (E, V)$, el procedimiento del algoritmo es el siguiente:
                     \begin{itemize}
-                        \item Se elige $e(u, v) \in E$ aleatoriamente.
-                        \item Se crea un $w \in V$, el cual reemplaza tanto a $u$ como a $v$ en todas
-                        las aristas en las que se encuentran. Es decir, $w$ puede tener más de una arista
-                        que vaya a un mismo vértice $q \in V$.
-                        \item Se elimina $e(u, v)$ de $E$.
-                        \item Si existe alguna $e(v, v) \in E$ (arista de un vértice consigo mismo), se elimina.
+                        \item Mientras $|V| > t$:
+                        \begin{itemize}
+                            \item Se elige $e(u, v) \in E$ aleatoriamente.
+                            \item Se crea un $w \in V$, el cual reemplaza tanto a $u$ como a $v$ en todas
+                            las aristas en las que se encuentran. Es decir, $w$ puede tener más de una arista
+                            que vaya a un mismo vértice $q \in V$.
+                            \item Se elimina $e(u, v)$ de $E$.
+                            \item Si existe alguna $e(v, v) \in E$ (arista de un vértice consigo mismo), se elimina.
+                        \end{itemize}
+                        \item Se devuelve el grafo resultante con $t$ vertices.
                     \end{itemize}
-                    \item Se devuelven las aristas que unen a esos dos vértices como el corte mínimo.
-                \end{itemize}
+                \subsubsubsection{Karger-Stein}
+                        Al algoritmo arriba descripto lo llamaremos \code{MinCut} y procederemos a explicar
+                    como funciona la optimización de Karger-Stein sobre el algoritmo original.
+                        Esta optimización utiliza un aloritmo recursivo, que llamaremos \code{FastMinCut} y que
+                    recibe como parámetro a un grafo $G = (V, E)$. El funcionamiento es el siguiente:
+                    \begin{itemize}
+                        \item Si $|V| > 8$:
+                        \begin{itemize}
+                            \item $t <-- \dfrac{|V|}{\sqrt{2}} + 1$
+                            \item Se obtienen dos grafos, $G_{1}^{'}$ y $G_{2}^{'}$ a través de llamados a
+                            \code{FastMinCut( MinCut(G, t) )}.
+                            \item Se verifica cuál de los dos grafos recibidos tiene el menor tamaño y se devuelve.
+                        \end{itemize}
+                        \item Sino:
+                        \begin{itemize}
+                            \item Se hace un llamado a \code{MinCut(G, 2)}. Es decir, se utiliza Karger tradicional.
+                        \end{itemize}
+                    \end{itemize}
             \subsubsection{Categoría de randomización}
                     Es un algoritmo \emph{Monte-Carlo} porque para algún orden de selección aleatoria
                 de aristas, el corte obtenido \emph{no} es el mínimo. Es decir, es rápido siempre pero no siempre
                 da resultados correctos. \\
-                \tab La probabilidad de que este algoritmo devuelva un corte que sea mínimo es $p \geqslant \binom{n}{2}^{-1}$
+                \tab La probabilidad de que el algoritmo original devuelva un corte que sea mínimo es $p \geqslant \binom{n}{2}^{-1}$
                 con $n = |V|$. Un dato adicional es que si el algoritmo se corre $T = \binom{n}{2}\ln{n}$ veces,
                 la probabilidad de no encontrar un corte mínimo es $[1-p]^T \leqslant \dfrac{1}{n}$ en un tiempo
                 $O(Tm) = O(n^2m\log{n})$ con $m = |E|$.
+                \tab En cuanto a la optimización de Karger-Stein, la probabilidad es $P(n) = \dfrac{1}{\log{n}}$.
     \newpage
 
     \section{Algoritmos Aproximados}

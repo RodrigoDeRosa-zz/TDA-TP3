@@ -9,7 +9,7 @@ def main():
     #Se crean los archivos
     print "Creando archivo..."
     creador = CreadorArchivos()
-    creador.crearArchivo(100)
+    #creador.crearArchivo(100)
     #Se lee un archivo y se crea el grafo
     print "Leyendo grafo..."
     lector = LectorArchivos()
@@ -26,6 +26,7 @@ def main():
         print edge
     print "\n"
 
+    """
     respuesta = raw_input("Ejecutar el algoritmo muchas veces para disminuir la probabilidad de error?[ENTER = NO]")
     if not respuesta: return
 
@@ -37,5 +38,5 @@ def main():
     print "El corte más pequeño obtenido tiene " + str(len(bestMinCut)) + " aristas. Las cuales son:"
     for edge in bestMinCut:
         print edge
-
+    """
 main()
